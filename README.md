@@ -91,7 +91,7 @@ Because the output impedance has been reduced to 5Ω, this device is now conside
 
 *   **Label the Enclosure:** It is highly recommended to add a physical label to the front panel:
     > `LOW-Z DRIVE | Z_out: 5Ω | Max Continuous Load: ≥20Ω (Pulse Only for MOSFET Gates) | DO NOT SHORT CIRCUIT`
-*   **Short Circuit Danger:** A dead short on the output at 10V will attempt to draw roughly 2A, generating up to 20W of instant heat. While the internal boost converter or USB brick over-current protection (OCP) will likely trigger a safety shutdown ("hiccup mode"), a continuous heavy load below 20Ω will rapidly overheat the TO-92 transistors.
+*   **Short Circuit Danger:** A dead short on the output at 10V will attempt to draw roughly 2A, generating up to 20W of instant heat. While the internal boost converter or USB brick over-current protection (OCP) will likely trigger a safety shutdown, its should not be overloaded intentionaly.
 
 ---
 
