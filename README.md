@@ -4,7 +4,7 @@ This repository contains the documentation, schematic guidelines, and bill of ma
 
 Stock units utilize a low-power TL082 operational amplifier choked by a 50Ω internal protection resistor. This setup heavily distorts (sags) square waves when attempting to drive high-capacitance loads like power MOSFET gates. This modification transforms the device into a robust, high-current driver capable of delivering clean pulses with minimal voltage drop.
 
----
+<img src="https://github.com/Grunwalskii/FG-200-DDS-Function-Generator-Low-Impedance-Upgrade/blob/main/4.jpg" width="200">
 
 ## 🚀 Performance Metrics (Post-Mod)
 
