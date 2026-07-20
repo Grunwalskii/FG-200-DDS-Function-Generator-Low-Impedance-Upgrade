@@ -54,9 +54,9 @@ Construct the BJT buffer using a "dead-bug" style layout or a small piece of pro
     *   Connect the S8050 (NPN) Collector to the internal +12V rail coming from the boost converter.
     *   Connect the S8550 (PNP) Collector to the internal -12V rail to preserve the negative voltage swing capability.
 *   **Emitters:** Solder the Emitter pins of both transistors together. This is your new high-power output node.
-*   **Output Modification:** Bypass (short out) the stock 50Ω resistor on the PCB. Connect the joint Emitters to one side of the new 5Ω resistor, and the other side directly to the center pin of the output BNC connector.
+*   **Output Modification:** Remove the stock 50Ω resistor on the PCB. Connect the joint Emitters to one side of the new 5Ω resistor, and the other side to the center pin of the output BNC connector.
 
-### 3. Decoupling & Rail Stiffening (Critical Step)
+### 3. Decoupling & Rail Stiffening
 Because the internal boost converter is tiny, local decoupling capacitors must be placed as close as physically possible to the transistor collectors to prevent the rails from collapsing during fast switching edges:
 
 *   **Positive Rail (+12V to GND):** Connect one 100µF Electrolytic and one 10µF 1206 Ceramic in parallel. *(Orientation: Positive lead to +12V, Negative lead to GND)*
@@ -91,8 +91,15 @@ Because the output impedance has been reduced to 5Ω, this device is now conside
 
 *   **Label the Enclosure:** It is highly recommended to add a physical label to the front panel:
     > `LOW-Z DRIVE | Z_out: 5Ω | Max Continuous Load: ≥20Ω (Pulse Only for MOSFET Gates) | DO NOT SHORT CIRCUIT`
-*   **Short Circuit Danger:** A dead short on the output at 10V will attempt to draw roughly 2A, generating up to 20W of instant heat. While the internal boost converter or USB brick over-current protection (OCP) will likely trigger a safety shutdown ("hiccup mode"), a continuous heavy load below 20Ω will rapidly overheat the TO-92 transistors. 
-*   **Thermal Check:** Keep an eye on the original linear regulators on the board. Since the input voltage was upgraded from 5V to 9V, they drop more voltage for the MCU/Screen and run warmer. Add a small stick-on heatsink if they feel hot to the touch.
+*   **Short Circuit Danger:** A dead short on the output at 10V will attempt to draw roughly 2A, generating up to 20W of instant heat. While the internal boost converter or USB brick over-current protection (OCP) will likely trigger a safety shutdown ("hiccup mode"), a continuous heavy load below 20Ω will rapidly overheat the TO-92 transistors.
+
+---
+
+## Support
+
+If you enjoy this project and want to support its development, you can buy me a coffee:
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W1L623I6WG)
 
 ---
 
